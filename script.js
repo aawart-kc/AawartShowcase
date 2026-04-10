@@ -28,13 +28,4 @@ const sObs = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.stats-wrap').forEach(el => sObs.observe(el));
 
-document.getElementById('photoInput').addEventListener('change', function() {
-  if (this.files && this.files[0]) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      document.getElementById('photoBox').innerHTML =
-        `<img src="${e.target.result}" alt="Aawart KC" class="photo-uploaded">`;
-    };
-    reader.readAsDataURL(this.files[0]);
-  }
-});
+
