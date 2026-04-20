@@ -307,7 +307,185 @@ footer { border-top: 1px solid var(--border); background: var(--bg2); }
 .flive::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: blink 2s ease-in-out infinite; }
 .fcopy { font-size: 0.75rem; color: var(--text3); }
 
-/* REVEAL */
+/* ACHIEVEMENTS – horizontal 3-col */
+.achieve-row {
+  display: grid;
+  grid-template-columns: 2fr auto 2fr;
+  gap: 0;
+  margin-top: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.achieve-col {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.achieve-divider {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+}
+.achieve-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.achieve-rank {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.achieve-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.015em;
+}
+.achieve-sub {
+  font-size: 0.73rem;
+  color: var(--text3);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.achieve-desc {
+  font-size: 0.85rem;
+  color: var(--text2);
+  line-height: 1.7;
+  font-weight: 400;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+/* CTA BLOCK */
+#cta { padding-top: 0; }
+.cta-block {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 64px 56px;
+  text-align: center;
+}
+.cta-glow {
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 500px; height: 300px;
+  background: radial-gradient(ellipse, rgba(79,158,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-content { position: relative; z-index: 1; }
+.cta-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+.cta-sub {
+  font-size: 1rem;
+  color: var(--text2);
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.cta-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* SOCIAL GRID */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 44px;
+}
+.social-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 22px 22px;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  transition: all 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(79,158,255,0.2));
+  opacity: 0;
+  transition: opacity 0.22s;
+}
+.social-card:hover {
+  border-color: rgba(79,158,255,0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(79,158,255,0.08);
+}
+.social-card:hover::before { opacity: 1; }
+.social-icon-wrap {
+  width: 46px; height: 46px;
+  background: var(--surface2);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  transition: background 0.2s;
+}
+.social-card:hover .social-icon-wrap {
+  background: rgba(79,158,255,0.12);
+}
+.social-info { flex: 1; }
+.social-name { font-size: 0.92rem; font-weight: 700; margin-bottom: 3px; }
+.social-url { font-size: 0.72rem; color: var(--text3); font-weight: 400; }
+.social-arrow {
+  align-self: flex-end;
+  color: var(--text3);
+  font-size: 1rem;
+  transition: transform 0.2s, color 0.2s;
+}
+.social-card:hover .social-arrow {
+  color: var(--accent);
+  transform: translate(3px, -3px);
+}
+
+/* RESPONSIVE additions */
+@media (max-width: 900px) {
+  .achieve-row {
+    grid-template-columns: 1fr;
+  }
+  .achieve-divider {
+    width: auto;
+    height: 1px;
+    align-self: auto;
+  }
+  .social-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cta-block { padding: 40px 24px; }
+}
+@media (max-width: 500px) {
+  .social-grid { grid-template-columns: 1fr; }
+}
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 

@@ -27,5 +27,3 @@ const sObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('.stats-wrap').forEach(el => sObs.observe(el));
-
-
