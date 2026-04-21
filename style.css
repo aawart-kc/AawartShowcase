@@ -148,7 +148,7 @@ nav.scrolled {
   background: var(--surface); border: 1px solid var(--border);
 }
 .photo-box {
-  width: %; min-height: 300px; aspect-ratio: 3/4;
+  width: 100%;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 12px;
   background: linear-gradient(160deg, var(--surface) 0%, var(--surface2) 100%);
@@ -163,7 +163,7 @@ nav.scrolled {
   transition: background 0.15s;
 }
 .upload-lbl:hover { background: rgba(79,158,255,0.18); }
-.photo-uploaded { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+.photo-uploaded { width: 100%; height: auto; display: block; }
 .photo-footer {
   padding: 13px 16px;
   display: flex; align-items: center; justify-content: space-between;
@@ -262,7 +262,20 @@ nav.scrolled {
 .bl { display: grid; grid-template-columns: 150fr; gap: 44px; margin-top: 48px; align-items: start; }
 .bcards { display: flex; flex-direction: column; gap: 14px; }
 .bc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
-.bct { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 9px; }
+.bc-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
+.bct { font-size: 0.92rem; font-weight: 700; color: var(--text); }
+.bc-company { font-size: 0.78rem; color: var(--text3); font-weight: 500; margin-top: 3px; }
+.bc-company a { color: var(--text3); text-decoration: none; transition: color 0.2s; }
+.bc-company a:hover { color: var(--accent); }
+.bc-badge-current {
+  flex-shrink: 0;
+  background: rgba(61,220,132,0.1);
+  color: var(--green);
+  border: 1px solid rgba(61,220,132,0.25);
+  font-size: 0.7rem; font-weight: 700;
+  padding: 3px 11px; border-radius: 100px;
+  letter-spacing: 0.02em;
+}
 .bc p { font-size: 0.865rem; color: var(--text2); line-height: 1.72; font-weight: 400; }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
 .tg {
